@@ -2,7 +2,8 @@
 const secureSignallingClient = require('./SecureSignallingClient.js');
 
 const options = {
-    hmacKey: 'secretpassword',
+    hmacKey: require('./password.js'),
+    //hmacKey: 'secretpassword',
     hashByteLength: 32,
     randDataLength: 100,
     port: 777,
