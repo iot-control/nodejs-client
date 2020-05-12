@@ -54,7 +54,13 @@ const cmds = {
 
 secureSignallingClient(options, cmds.switchGate)
     .then(res => {
-        console.log('The response ->');
+        switch(res){
+            case 0:
+                console.log('COMMAND SENT');
+                break;
+            default:
+                console.log('UNKNOWN RESPONSE')
+        }
         console.log(res);
     })
     .catch(err => {

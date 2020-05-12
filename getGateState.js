@@ -54,7 +54,19 @@ const cmds = {
 
 secureSignallingClient(options, cmds.getGateState)
     .then(res => {
-        console.log('The response ->');
+        switch(res){
+            case 0:
+                console.log('GATE IS CLOSED');
+                break;
+            case 1:
+                console.log('GATE IS OPEN');
+                break;
+            case 2:
+                console.log('GATE IS OPENING/CLOSING');
+                break;
+            default:
+                console.log('UNKNOWN RESPONSE')
+        }
         console.log(res);
     })
     .catch(err => {
